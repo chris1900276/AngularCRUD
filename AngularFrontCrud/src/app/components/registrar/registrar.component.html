@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="body">
+    <div class="login">
+        <form [formGroup]="form" (ngSubmit)="send()">
+            <img src="../../../assets/img/user.png" alt="">
+            <h2>Registrar</h2>
+            <mat-form-field class = "anchura"  appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName = "nombre">
+              </mat-form-field>
+
+              <mat-form-field class = "anchura"  appearance="fill">
+                <mat-label>Correo</mat-label>
+                <input matInput formControlName = "correo">
+              </mat-form-field>
+
+              <mat-form-field class = "anchura"  appearance="fill">
+                <mat-label>Direccion</mat-label>
+                <input matInput formControlName = "direccion">
+              </mat-form-field>
+
+              <mat-form-field class = "anchura"  appearance="fill">
+                <mat-label>Telefono</mat-label>
+                <input matInput formControlName = "telefono">
+              </mat-form-field>
+    
+            
+              <button [disabled]="form.invalid" class="btn btn-"type="submit" class = "anchura button" mat-raised-button color="primary">Enter</button>
+    
+
+        </form>   
+          
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.body {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    background-color: rgb(252, 252, 252);
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.login{
+    width: 100%;
+    max-width: 330px;
+    text-align: center;
+}
+.anchura{
+    width: 80%;
+    height: 50%;
+}
+.button{
+    height:50px;
+}
