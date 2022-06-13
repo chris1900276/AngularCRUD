@@ -36,6 +36,7 @@ export class RegistrarComponent implements OnInit {
       });
     } else {
       console.log('ERROR');
+      console.log('ERROR');
     }
   }
 
