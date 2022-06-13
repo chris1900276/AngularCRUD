@@ -10,6 +10,7 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-editar',
@@ -30,7 +31,7 @@ export class EditarComponent implements OnInit {
 
   idUser:any;
 
-  constructor(private controller:ControllerService, private route: ActivatedRoute) { }
+  constructor(private controller:ControllerService, private route: ActivatedRoute, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
@@ -68,6 +69,12 @@ export class EditarComponent implements OnInit {
     if (this.formUpdate.valid) {
        (await this.controller.updateUser(this.formUpdate.value, this.idUser)).subscribe((res: any) => {
         console.log(res);
+       
+      });
+      this._snackBar.open("Usuario Actualizado", 'Cerrar', {
+        duration: 2500,
+        verticalPosition: 'bottom',
+        horizontalPosition: "center"
       });
     } else {
       console.log('ERROR');

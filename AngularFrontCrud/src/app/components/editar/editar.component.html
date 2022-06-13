@@ -1,34 +1,48 @@
 <app-header></app-header>
-<div class="body">
-    <div class="login">
-        <form [formGroup]="formUpdate" (ngSubmit)="update()">
-            <img src="../../../assets/img/user.png" alt="">
-            <h2>Editar</h2>
-            <mat-form-field class = "anchura"  appearance="fill">
-                <mat-label>Nombre</mat-label>
-                <input matInput formControlName = "nombre">
-              </mat-form-field>
+<div class="container">
+  
+  <div class="row">
+      <form class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [formGroup]="formUpdate" (ngSubmit)="update()">
+        <div class="container-fluid">
+          <div class="row">
+           
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 text-center" >
+              <h2>Registrar</h2>
+                  <img src="../../../assets/img/user.png" alt="">
+                
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8" >
+              <div class="campos">
+                <mat-form-field class="anchura" appearance="fill">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput formControlName="nombre">
+                </mat-form-field>
+              
+                <mat-form-field class="anchura" appearance="fill">
+                  <mat-label>Correo</mat-label>
+                  <input matInput formControlName="correo">
+                </mat-form-field>
+              </div>
+              <div class="campos">
+                <mat-form-field class="anchura" appearance="fill">
+                  <mat-label>Direccion</mat-label>
+                  <input matInput formControlName="direccion">
+                </mat-form-field>
+              
+                <mat-form-field class="anchura" appearance="fill">
+                  <mat-label>Telefono</mat-label>
+                  <input matInput formControlName="telefono">
+                </mat-form-field>
+              </div>
 
-              <mat-form-field class = "anchura"  appearance="fill">
-                <mat-label>Correo</mat-label>
-                <input matInput formControlName = "correo">
-              </mat-form-field>
-
-              <mat-form-field class = "anchura"  appearance="fill">
-                <mat-label>Direccion</mat-label>
-                <input matInput formControlName = "direccion">
-              </mat-form-field>
-
-              <mat-form-field class = "anchura"  appearance="fill">
-                <mat-label>Telefono</mat-label>
-                <input matInput formControlName = "telefono">
-              </mat-form-field>
-    
+            </div>
             
-              <button [disabled]="formUpdate.invalid" class="btn btn-"type="submit" class = "anchura button" mat-raised-button color="primary">Enter</button>
-    
 
-        </form>   
-          
-    </div>
-</div>
+          </div>
+          <hr>
+          <div class=" row">
+            <div style="width:33%;"></div>
+            <button [disabled]="formUpdate.invalid" class="btn btn-secondary " style="width:33%;" type="submit"  mat-raised-button color="primary">Enter</button>
+            <div style="width:33%;"></div>
+          </div>
+        </div>

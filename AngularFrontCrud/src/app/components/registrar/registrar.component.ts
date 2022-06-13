@@ -33,10 +33,18 @@ export class RegistrarComponent implements OnInit {
     if (this.form.valid) {
       (await this.controller.addUser(this.form.value)).subscribe((res: any) => {
         console.log(res);
+        
+        this._snackBar.open("Usuario agregado correctamente", 'Cerrar', {
+          duration: 2500,
+          verticalPosition: 'bottom',
+          horizontalPosition: "center"
+        });
+
       });
     } else {
       console.log('ERROR');
       console.log('ERROR');
+      
     }
   }
 
