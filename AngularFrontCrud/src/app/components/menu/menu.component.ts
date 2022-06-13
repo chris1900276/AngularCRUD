@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { ControllerService } from '../../services/controller.service';
@@ -10,12 +11,12 @@ import { ControllerService } from '../../services/controller.service';
 export class MenuComponent implements OnInit {
 
   displayedColumns: string[] = ['Usuario', 'Nombre', 'Apellido', 'Sexo', 'Acciones'];
-  dataSource:any;
- 
+  dataSource: any;
 
-  
 
-  constructor(private controller:ControllerService, private route: ActivatedRoute) { }
+
+
+  constructor(private controller: ControllerService, private route: ActivatedRoute, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.showUsers();
@@ -33,18 +34,22 @@ export class MenuComponent implements OnInit {
 
   }
 
-  async deleteUser(id:any){
+  async deleteUser(id: any) {
     (await this.controller.deleteUser(id)).subscribe(
 
       (res: any) => {
-        console.log(res);
-        
+        console.log(res)
+
       }
-    
+
     )
 
-   window.location.reload();
-  
-  }
+    this._snackBar.open("Usuario Eliminado", 'Cerrar', {
+      duration: 5000,
+      verticalPosition: 'bottom',
+      horizontalPosition: "center"
 
+    });
+    window.location.reload();
+}
 }
